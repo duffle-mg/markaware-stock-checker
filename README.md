@@ -1,0 +1,1 @@
+# markaware-stock-checker
