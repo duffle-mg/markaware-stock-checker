@@ -1,0 +1,13 @@
+```
+name: MARKAWARE Stock Check
+'on': {workflow_dispatch: {}, schedule: [{cron: '*/5 * * * *'}]}
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check stock
+        env:
+          DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
+        run: python check_stock.py
+```
